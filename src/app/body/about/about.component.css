@@ -1,0 +1,49 @@
+.primary {
+    text-align: center;
+    margin: 10px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.secondary {
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.about-text {
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.about-text-right {
+    width: 60%;
+    text-align: right;
+    margin-right: 15px;
+    font-size: 20px;
+    color: white;
+}
+
+.second-container img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+}
+
+.text-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
