@@ -1,6 +1,94 @@
+#offer {
+    /* background-image: url(src/assets/backgrounds/konrad5.png); */
+    height: 2000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .header-text {
     text-align: center;
-    margin: 10px;
+    margin: 15px;
     font-size: 48px;
     font-weight: bold;
+}
+
+.offer-container {
+    display: flex;
+    gap: 20px;
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.offer-item {
+    background-color: white;
+    z-index: -1;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    height: 100%;
+}
+
+.item-image {
+    filter: drop-shadow(rgba(0, 0, 0, 0.3) 0px 0px 12px);
+    margin-top: 15px;
+    border-radius: 15px;
+    width: 90%;
+}
+
+.price-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.item-title {
+    width: 90%;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-desc {
+    width: 90%;
+    font-size: 18px;
+    text-align: center;
+}
+
+.price {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-button {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #6F0000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; 
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #6F0000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
 }

@@ -78,7 +78,7 @@ export class HeaderComponent {
     }
 }
 
-  navigateToSection(sectionId: string): void {
+  public navigateToSection(sectionId: string): void {
     this.scrollToElement(sectionId);
     this.toggleMenu();
   }
