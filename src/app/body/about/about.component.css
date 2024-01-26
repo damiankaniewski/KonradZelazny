@@ -35,6 +35,10 @@
     color: white;
 }
 
+.second-container {
+    height: 90vw;
+}
+
 .second-container img {
     position: absolute;
     z-index: -1;
@@ -46,4 +50,38 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+}
+
+.third-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.benefits-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.benefits-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.benefits-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 15px;
+    font-size: 24px;
 }

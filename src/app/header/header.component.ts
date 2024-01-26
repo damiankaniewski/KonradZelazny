@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Renderer2 } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 
@@ -31,7 +31,12 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])
   ]
 })
+
+
 export class HeaderComponent {
+
+  constructor(private renderer: Renderer2) {}
+  
   isMenuOpen: boolean = false;
   menuState: 'void' | 'visible' = 'void';
   imageState: 'normal' | 'rotate' = 'normal';
@@ -57,5 +62,24 @@ export class HeaderComponent {
     } else {
       document.body.style.overflow = '';
     }
+  }
+
+  scrollToElement(targetId: string): void {
+    const targetElement = document.getElementById(targetId);
+    const headerHeight = 70;
+
+    if (targetElement) {
+        const targetPosition = targetElement.offsetTop - headerHeight;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+  navigateToSection(sectionId: string): void {
+    this.scrollToElement(sectionId);
+    this.toggleMenu();
   }
 }
