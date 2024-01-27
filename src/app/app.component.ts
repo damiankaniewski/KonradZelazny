@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import firebaseConfig from 'src/config/firebase';
+import { Router } from '@angular/router';
+import { FirebaseService } from './config/firebase-service/firebase-service.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,9 @@ import firebaseConfig from 'src/config/firebase';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'konrad-zelazny-strona';
+  title = 'Konrad Żelazny';
 
-  constructor() {
-    const app = initializeApp(firebaseConfig);
-    getAnalytics(app);
+  constructor(private router: Router, private firebaseService: FirebaseService) {
+    this.router.navigate(['/main']);
   }
 }

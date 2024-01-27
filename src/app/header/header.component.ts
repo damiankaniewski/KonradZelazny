@@ -1,5 +1,6 @@
 import { Component, HostListener, Renderer2 } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -35,7 +36,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 export class HeaderComponent {
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private router: Router) {}
   
   isMenuOpen: boolean = false;
   menuState: 'void' | 'visible' = 'void';
@@ -78,7 +79,8 @@ export class HeaderComponent {
     }
 }
 
-  public navigateToSection(sectionId: string): void {
+  public async navigateToSection(sectionId: string): Promise<void> {
+    await this.router.navigate(['/main']);
     this.scrollToElement(sectionId);
     this.toggleMenu();
   }

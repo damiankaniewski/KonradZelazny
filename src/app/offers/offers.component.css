@@ -1,0 +1,101 @@
+#offers {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text {
+    text-align: center;
+    margin: 15px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.offers-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+    width: 75%;
+    height: 100%;
+}
+
+#serviceSelect {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: left;
+    outline: none;
+    transition: border-color.5s;
+}
+
+.offers-form input, textarea {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: left;
+    outline: none;
+    transition: border-color .5s;
+}
+
+.offers-form input::placeholder, textarea::placeholder {
+    color: #c2c2c2;
+}
+
+.offers-form input:focus {
+    border-bottom-color: #6f0000;
+    font-weight: bold;
+  }
+
+.offers-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#message {
+    height: 150px;
+    line-height: 150%;
+    outline: 0;
+    margin-bottom: 20px;
+}
+
+.offers-form button {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #6F0000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; 
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #6F0000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    width: 250px;
+}

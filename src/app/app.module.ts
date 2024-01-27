@@ -8,6 +8,10 @@ import { BodyComponent } from './body/body.component';
 import { HomepageComponent } from './body/homepage/homepage.component';
 import { AboutComponent } from './body/about/about.component';
 import { OfferComponent } from './body/offer/offer.component';
+import { ContactComponent } from './body/contact/contact.component';
+import { OffersComponent } from './offers/offers.component';
+import firebase from "firebase/compat/app";
+import "firebase/firestore";
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { OfferComponent } from './body/offer/offer.component';
     BodyComponent,
     HomepageComponent,
     AboutComponent,
-    OfferComponent
+    OfferComponent,
+    ContactComponent,
+    OffersComponent
   ],
   imports: [
     BrowserModule,
