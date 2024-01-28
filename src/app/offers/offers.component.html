@@ -1,28 +1,28 @@
 <section id="offers">
-    <p class="header-text">Formularz zamówienia</p>
-    <form class="offers-form">
-      <label for="serviceSelect">Wybierz usługę:</label>
-      <select id="serviceSelect" name="service" [value]="selectedOption">
-        <option value="training">Trening personalny</option>
-        <option value="voucher">Voucher</option>
-        <option value="trainingPlan">Plan treningowy</option>
-      </select>
-      <div class="offers-item">
-        <label for="nameInput">Imię i nazwisko:</label>
-        <input type="text" id="nameInput" name="name" required>
-      </div>
-      <div class="offers-item">
-        <label for="emailInput">Email:</label>
-        <input type="email" id="emailInput" name="email" required>
-      </div>
-      <div class="offers-item">
-        <label for="phoneInput">Telefon:</label>
-        <input type="tel" id="phoneInput" name="phone" required>
-      </div>
-      <div class="offers-item">
-        <label for="additionalInfoTextarea">Dodatkowe informacje:</label>
-        <textarea id="message" name="additionalInfo"></textarea>
-      </div>
-      <button type="submit">Przejdź do płatności</button>
-    </form>
+  <p class="header-text">Formularz zamówienia</p>
+  <form class="offers-form" (ngSubmit)="addOffer()">
+    <label for="serviceSelect">Wybierz usługę:</label>
+    <select id="serviceSelect" name="service" [(ngModel)]="selectedOption" required>
+      <option value="training">Trening personalny</option>
+      <option value="voucher">Voucher</option>
+      <option value="trainingPlan">Plan treningowy</option>
+    </select>
+    <div class="offers-item">
+      <label for="nameInput">Imię i nazwisko:</label>
+      <input type="text" id="nameInput" name="name" [(ngModel)]="name" required>
+    </div>
+    <div class="offers-item">
+      <label for="emailInput">Email:</label>
+      <input type="email" id="emailInput" name="email" [(ngModel)]="email" required>
+    </div>
+    <div class="offers-item">
+      <label for="phoneInput">Telefon:</label>
+      <input type="tel" id="phoneInput" name="phone" [(ngModel)]="phone" required>
+    </div>
+    <div class="offers-item">
+      <label for="additionalInfoTextarea">Dodatkowe informacje:</label>
+      <textarea id="additionalInfoTextarea" name="additionalInfo" [(ngModel)]="additionalInfo"></textarea>
+    </div>
+    <button type="submit">Przejdź do płatności</button>
+  </form>
 </section>

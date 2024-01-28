@@ -1,0 +1,44 @@
+#footer {
+    background-color: #6F0000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.social-links a {
+  padding: 10px;
+}
+
+.social-links img {
+    width: 50px;
+}  
+.signature {
+    font-size: 18px;
+    text-align: right;
+    vertical-align: center;
+    margin-bottom: 25px;
+}
+
+.author {
+    font-size: 12px;
+    text-align: right;
+    vertical-align: center;
+    margin:0;
+}

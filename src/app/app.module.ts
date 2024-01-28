@@ -10,8 +10,11 @@ import { AboutComponent } from './body/about/about.component';
 import { OfferComponent } from './body/offer/offer.component';
 import { ContactComponent } from './body/contact/contact.component';
 import { OffersComponent } from './offers/offers.component';
-import firebase from "firebase/compat/app";
 import "firebase/firestore";
+import { OfferServiceComponent } from './services/offer-service/offer-service.component';
+import { FormsModule } from '@angular/forms';
+import { OfferThanksComponent } from './offers/offer-thanks/offer-thanks.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,16 @@ import "firebase/firestore";
     AboutComponent,
     OfferComponent,
     ContactComponent,
-    OffersComponent
+    OffersComponent,
+    OfferServiceComponent,
+    OfferThanksComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

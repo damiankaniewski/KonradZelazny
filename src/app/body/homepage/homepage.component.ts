@@ -8,13 +8,13 @@ import { HeaderComponent } from 'src/app/header/header.component';
   providers: [HeaderComponent]
 })
 export class HomepageComponent {
-  constructor(private headerComponent: HeaderComponent) {}
+  constructor(private headerComponent: HeaderComponent) { 
 
 
-  navigateToSection(sectionId: string): void {
-    console.log('test');
-    this.headerComponent.navigateToSection(sectionId);
-    this.headerComponent.toggleMenu();
   }
 
+  navigateToSection(sectionName: string) {
+    this.headerComponent.navigateToSection(sectionName);
+    this.headerComponent.toggleMenu();
+  }
 }
