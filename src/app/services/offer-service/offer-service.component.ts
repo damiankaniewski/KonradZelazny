@@ -11,13 +11,17 @@ export class OfferServiceComponent {
   db: any;
   constructor(private firebaseService: FirebaseService) { 
     this.db = this.firebaseService.db;
-    console.log(this.getOffersFromDatabase('voucher'));
   }
   async addOfferToDatabase(offerData: any, offerType: string) {
     const currentDate = new Date();
-    const formattedDate = currentDate.toISOString(); 
+    const formattedDate = currentDate.toISOString().split('T')[0];
+    const formattedTime = currentDate.toTimeString().split(' ')[0];
 
-    const documentName = `${offerData.name.replace(/\s/g, '')}${formattedDate}`;
+    const nameParts = offerData.name.split(' ');
+    const firstName = nameParts[0];
+    const lastName = nameParts.slice(1).join('_');
+
+    const documentName = `${firstName}_${lastName}_${formattedDate}_${formattedTime}_${offerType}`;
 
     await setDoc(doc(this.db, offerType, documentName), offerData);
   }

@@ -11,7 +11,7 @@ export class OfferThanksComponent {
 constructor(private router: Router) {
   setTimeout(() => {
     this.router.navigate(['/main']);
-  }, 3000)
+  }, 10000)
 }
 
   goBack() {

@@ -21,10 +21,11 @@
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-    width: 75%;
-    height: 600px;
+    width: 90%;
+    height: 500px;
 }
 
 .item-image {
@@ -49,7 +50,7 @@
 }
 
 .price {
-    font-size: 32px;
+    font-size: 48px;
     text-align: center;
     font-weight: bold;
 }
