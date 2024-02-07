@@ -87,9 +87,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/aos/dist/aos.js"
+            ]
           }
         }
       }
@@ -98,4 +101,5 @@
   "cli": {
     "analytics": "4e1d649f-5555-4562-9ce2-38d6747dde51"
   }
+  
 }

@@ -1,14 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FirebaseService } from '../config/firebase-service/firebase-service.component';
-import { getFirestore } from 'firebase/firestore';
 import { OfferServiceComponent } from '../services/offer-service/offer-service.component';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.css'],
-  providers: [OfferServiceComponent]
+  providers: [OfferServiceComponent],
+  animations: [
+    trigger('fadeAnimation', [
+      state('void', style({
+        opacity: 0,
+        transform: 'scale(0.1)' // początkowy rozmiar
+      })),
+      transition(':enter', [
+        animate('0.5s ease-in-out')
+      ]),
+    ]),
+  ]
 })
 export class OffersComponent implements OnInit {
   selectedOption: string = 'training';

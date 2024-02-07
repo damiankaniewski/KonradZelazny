@@ -9,6 +9,9 @@ import { HeaderComponent } from 'src/app/header/header.component';
 })
 export class OfferThanksComponent {
 constructor(private router: Router) {
+  setTimeout(() => {
+    this.router.navigate(['/main']);
+  }, 3000)
 }
 
   goBack() {

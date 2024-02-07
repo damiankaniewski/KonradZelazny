@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FirebaseService } from './config/firebase-service/firebase-service.component';
-import { CommonModule } from '@angular/common';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +13,9 @@ export class AppComponent {
 
   constructor(private router: Router, private firebaseService: FirebaseService) {
     this.router.navigate(['/main']);
+  }
+
+  ngAfterViewInit() {
+    AOS.init();
   }
 }

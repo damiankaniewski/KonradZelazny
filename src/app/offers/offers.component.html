@@ -1,6 +1,26 @@
 <section id="offers">
   <p class="header-text">Formularz zamówienia</p>
-  <form class="offers-form" (ngSubmit)="addOffer()">
+  
+  <div class="offer-details" *ngIf="selectedOption === 'voucher'" [@fadeAnimation]="selectedOption">
+    <img class="item-image" src="assets/backgrounds/voucher.jpg" alt="">
+    <p class="item-title">Voucher</p>
+    <p class="item-desc">Voucher na trening personalny</p>
+    <p class="price">120 zł</p>
+  </div>
+  <div class="offer-details" *ngIf="selectedOption === 'training'" [@fadeAnimation]="selectedOption">
+    <img class="item-image" src="assets/backgrounds/training.png" alt="">
+    <p class="item-title">Trening personalny</p>
+    <p class="item-desc">Indywidualny trening dopasowany do Twoich celów i potrzeb</p>
+    <p class="price">120 zł</p>
+  </div>
+  <div class="offer-details" *ngIf="selectedOption === 'trainingPlan'" [@fadeAnimation]="selectedOption">
+    <img class="item-image" src="assets/backgrounds/trainingPlan.png" alt="">
+    <p class="item-title">Plan treningowy</p>
+    <p class="item-desc">Spersonalizowany plan treningowy dostosowany do Twoich celów</p>
+    <p class="price">120 zł</p>
+  </div>
+
+  <form class="offers-form" (ngSubmit)="addOffer()" >
     <label for="serviceSelect">Wybierz usługę:</label>
     <select id="serviceSelect" name="service" [(ngModel)]="selectedOption" required>
       <option value="training">Trening personalny</option>
@@ -23,6 +43,6 @@
       <label for="additionalInfoTextarea">Dodatkowe informacje:</label>
       <textarea id="additionalInfoTextarea" name="additionalInfo" [(ngModel)]="additionalInfo"></textarea>
     </div>
-    <button type="submit">Przejdź do płatności</button>
+    <button type="submit">Złóż zamówienie</button>
   </form>
 </section>

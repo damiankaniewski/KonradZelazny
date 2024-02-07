@@ -13,6 +13,47 @@
     font-weight: bold;
 }
 
+.offer-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+    width: 75%;
+    height: 600px;
+}
+
+.item-image {
+    filter: drop-shadow(rgba(0, 0, 0, 0.3) 0px 0px 12px);
+    margin-top: 15px;
+    border-radius: 15px;
+    width: 90%;
+}
+
+.item-title {
+    width: 90%;
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-desc {
+    width: 90%;
+    font-size: 18px;
+    text-align: center;
+}
+
+.price {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
 .offers-form {
     display: flex;
     flex-direction: column;
@@ -20,6 +61,7 @@
     justify-content: center;
     background-color: white;
     padding: 20px;
+    margin-bottom: 20px;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
     width: 75%;
@@ -69,7 +111,7 @@
     width: 100%;
 }
 
-#message {
+#additionalInfoTextarea {
     height: 150px;
     line-height: 150%;
     outline: 0;

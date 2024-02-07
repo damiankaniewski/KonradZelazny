@@ -81,12 +81,17 @@ hr {
     width: 100%;
 }
 
+.benefits-container img {
+    width: 180px;
+    height: auto;
+}
+
 .benefits-items {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 15px;
+    padding: 15px;
 }
 
 .benefits-item {
