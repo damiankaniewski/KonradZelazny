@@ -1,47 +1,359 @@
 <section id="offers">
   <p class="header-text">Formularz zamówienia</p>
 
-  <form class="offers-form" (ngSubmit)="addOffer()" >
-    <label for="serviceSelect">Wybierz usługę:</label>
-    <select id="serviceSelect" name="service" [(ngModel)]="selectedOption" required>
+  <form
+    action="https://formsubmit.co/daba9@op.pl"
+    method="POST"
+    class="offers-form"
+    #offerForm="ngForm"
+    (ngSubmit)="submitOffer(offerForm)"
+  >
+    <label for="serviceSelect">Wybierz opcję:</label>
+    <select
+      id="serviceSelect"
+      name="service"
+      [(ngModel)]="selectedOption"
+      required
+      (ngModelChange)="updatePrice(); updateBooleans()"
+    >
       <option value="training">Trening personalny</option>
-      <option value="voucher">Voucher</option>
       <option value="trainingPlan">Plan treningowy</option>
+      <option value="onlineTraining">Prowadzenie treningowe</option>
     </select>
-    <div class="offer-details" *ngIf="selectedOption === 'voucher'" [@fadeAnimation]="selectedOption">
-      <img class="item-image" src="assets/backgrounds/voucher.jpg" alt="">
-      <p class="item-title">Voucher</p>
-      <p class="item-desc">Voucher na trening personalny</p>
-      <p class="price">120 zł</p>
-    </div>
-    <div class="offer-details" *ngIf="selectedOption === 'training'" [@fadeAnimation]="selectedOption">
-      <img class="item-image" src="assets/backgrounds/training.png" alt="">
+
+    <!-- Trening personalny -->
+    <div
+      class="offer-details"
+      *ngIf="selectedOption === 'training'"
+      [@fadeAnimation]="selectedOption"
+    >
+      <img class="item-image" src="assets/backgrounds/training.png" alt="" />
       <p class="item-title">Trening personalny</p>
-      <p class="item-desc">Indywidualny trening dopasowany do Twoich celów i potrzeb</p>
-      <p class="price">120 zł</p>
+      <p class="item-desc">
+        Na treningu personalnym zadbam o Twoją muskulaturę i zdrowie.<br /><br />
+        W czasie treningu cały czas skupiam się nad realizacją Twojego celu i
+        najlepszym spożytkowaniu tego czasu.<br /><br />
+        Dzięki mojej wiedzy nie stanie Ci się krzywda a realizacja wyznaczonych
+        celów będzie skuteczna.<br /><br />
+        Na pierwszym treningu przeprowadzam wywiad zdrowotny i testy
+        diagnostyczne.<br /><br />
+        Na ich podstawie dobieram ćwiczenia i plan treningowy, uwzględniając
+        wady postawy, dolegliwości bólowe itp.
+        <br /><br />
+        Pierwszy trening zawiera:
+      </p>
+      <p
+        class="item-desc"
+        style="text-align: left; padding-top: 0; margin-top: 0"
+      >
+        - wywiad zdrowotny<br />
+        - testy diagnostyczne<br />
+        - trening właściwy<br />
+        - rozciąganie<br />
+      </p>
+      <p class="item-desc">
+        <b
+          >Treningi odbywają się w Xtreme Fitness Skawina ul. 29 Listopada 21</b
+        >
+      </p>
     </div>
-    <div class="offer-details" *ngIf="selectedOption === 'trainingPlan'" [@fadeAnimation]="selectedOption">
-      <img class="item-image" src="assets/backgrounds/trainingPlan.png" alt="">
+    <!-- Plan treningowy -->
+    <div
+      class="offer-details"
+      *ngIf="selectedOption === 'trainingPlan'"
+      [@fadeAnimation]="selectedOption"
+    >
+      <img
+        class="item-image"
+        src="assets/backgrounds/trainingPlan.png"
+        alt=""
+      />
       <p class="item-title">Plan treningowy</p>
-      <p class="item-desc">Spersonalizowany plan treningowy dostosowany do Twoich celów</p>
-      <p class="price">120 zł</p>
+      <p class="item-desc">
+        Plan treningowy dostosowany do Twoich celów. <br /><br />
+        Określenie celu pozwoli na dobranie odpowiedniej formy treningu.
+        <br /><br />
+        Jest to trening, który można wykonać w siłowni albo w domu, bez
+        specjalistycznego sprzętu treningowego. <br /><br />
+        Ćwiczenia będą uwzględniały przyrządy, którymi dysponujesz. Każdy plan
+        jest przygotowywany w oparciu o Twoje możliwości, czyli: sprawność
+        fizyczną, staż treningowy, przebyte kontuzje oraz przede wszystkim
+        <b>CEL</b>.<br /><br />
+        <b>Otrzymujesz:</b>
+      </p>
+      <p
+        class="item-desc"
+        style="text-align: left; padding-top: 0; margin-top: 0"
+      >
+        - <b>ćwiczenia</b>, które zbliżą Cię do osiągnięcia celu.<br />
+        - <b>plan treningowy</b> z odpowiednią kolejnością wykonywania
+        ćwiczeń.<br />
+        - <b>zakres powtórzeń</b> danego ćwiczenia i tempo wykonywania.<br />
+        - zaplanowaną <b>progresję</b> na każdy dzień.<br />
+        - <b>ćwiczenia</b> dobrane do Twojego sprzętu, którym dysponujesz.
+      </p>
+    </div>
+    <!-- Prowadzenie online -->
+    <div
+      class="offer-details"
+      *ngIf="selectedOption === 'onlineTraining'"
+      [@fadeAnimation]="selectedOption"
+    >
+      <img
+        class="item-image"
+        src="assets/backgrounds/onlineTraining.png"
+        alt=""
+      />
+      <p class="item-title">Prowadzenie treningowe</p>
+      <p class="item-desc">
+        Prowadzenie treningowe to plan treningowy ze stałym kontaktem i
+        obserwacją Twoich wyników.<br /><br />
+        Otrzymujesz ode mnie indywidualny plan treningowy, oparty na Twoim
+        celu.<br /><br />
+        Wysyłasz mi raporty co tydzień z treningów i aktualnej wagi, raz na dwa
+        tygodnie przesyłasz wygląd aktualnej sylwetki. Dzięki obserwacji Twoich
+        wyników wprowadzam odpowiednie modyfikacje dzięki, którym szybciej
+        osiągniesz założony cel.<br /><br />
+        <b>Otrzymujesz:</b>
+      </p>
+      <p
+        class="item-desc"
+        style="text-align: left; padding-top: 0; margin-top: 0"
+      >
+        - plan treningowy<br />
+        - progresje ćwiczeń<br />
+        - stały kontakt<br />
+        - możliwość modyfikacji ćwiczeń<br />
+        - rozpisaną kaloryczność kcal (białko, tłuszcze, węglowodany)<br />
+        - wsparcie dietetyczne
+      </p>
+      <p class="item-desc"><b>Wymagam:</b></p>
+      <p
+        class="item-desc"
+        style="text-align: left; padding-top: 0; margin-top: 0"
+      >
+        - waga raz na tydzień<br />
+        - raz na miesiąc obwody<br />
+        - raz na jakiś czas zdjęcia sylwetki<br />
+        - filmik z wykonaniem ćwiczenia, gdzie skoryguję Ci technikę
+      </p>
+      <p class="item-desc">
+        <b
+          >Uwaga: prowadzenie online przeprowadzam na osobach zdrowych, bez
+          kontuzji i urazów. W przypadku, gdy występują problemy zdrowotne,
+          proszę się umówić na trening z diagnostyką funkcjonalną.</b
+        >
+      </p>
+    </div>
+
+    <!-- Formularz zamówienia -->
+    <p class="form-header">Szczegóły</p>
+    <!-- Trening -->
+    <div class="training-info" *ngIf="selectedOption === 'training'">
+      <label for="trainingOptionSelect">Wybierz opcję:</label>
+      <select
+        id="trainingOptionSelect"
+        name="trainingOption"
+        required
+        [(ngModel)]="trainingOptionSelect"
+        (ngModelChange)="updatePrice()"
+      >
+        <option value="trainingFour">4 treningi w miesiącu</option>
+        <option value="trainingEight">8 treningów w miesiącu</option>
+        <option value="trainingTwelve">12 treningów w miesiącu</option>
+      </select>
+      <div class="offers-item">
+        <label for="nameInput">Wybierz swoją dostępność:</label>
+      </div>
+      <div class="checkboxes">
+        <input type="checkbox" name="early" id="early" [(ngModel)]="isEarly" />
+        <p>6:00-12:00</p>
+      </div>
+      <div class="checkboxes">
+        <input type="checkbox" name="late" id="late" [(ngModel)]="isLate" />
+        <p>12:00-22:00</p>
+      </div>
+      <p
+        *ngIf="!isEarly && !isLate"
+        class="error"
+        data-aos="zoom-in"
+        data-aos-duration="200"
+        data-aos-once="true"
+      >
+        Wybierz swoją dostępność!
+      </p>
+      <div class="offers-item">
+        <label for="nameInput">Czy jest to prezent?</label>
+      </div>
+      <div class="checkboxes">
+        <input
+          type="checkbox"
+          name="voucher"
+          id="voucher"
+          [(ngModel)]="isVoucher"
+        />
+        <p>Voucher</p>
+      </div>
+      <p
+        *ngIf="isVoucher"
+        class="error"
+        data-aos="zoom-in"
+        data-aos-duration="200"
+        data-aos-once="true"
+      >
+        Pamiętaj, by podać w informacjach dodatkowych dla kogo jest to voucher
+        oraz z jakiej okazji!
+      </p>
+    </div>
+
+    <!-- Plan treningowy -->
+    <div class="training-info" *ngIf="selectedOption === 'trainingPlan'">
+      <label for="trainingPlanOptionSelect">Wybierz opcję:</label>
+      <select
+        id="trainingPlanOptionSelect"
+        name="trainingPlanOption"
+        required
+        [(ngModel)]="trainingPlanOptionSelect"
+        (ngModelChange)="updatePrice()"
+      >
+        <option value="planOne">1 blok - 6 tygodni</option>
+        <option value="planTwo">2 bloki - 12 tygodni</option>
+        <option value="planThree">3 bloki - 18 tygodni</option>
+      </select>
+      <div class="offers-item">
+        <label for="nameInput">Oświadczenie:</label>
+      </div>
+      <div class="checkboxes">
+        <input
+          type="checkbox"
+          name="healthy"
+          id="healthy"
+          [(ngModel)]="healthCheck"
+        />
+        <p [ngClass]="{ required: !healthCheck }">
+          Jestem osobą zdrową, bez urazów
+        </p>
+      </div>
+    </div>
+
+    <!-- Współpraca online -->
+    <div class="training-info" *ngIf="selectedOption === 'onlineTraining'">
+      <label for="onlineTrainingOptionSelect">Wybierz opcję:</label>
+      <select
+        id="onlineTrainingOptionSelect"
+        name="onlineTrainingOption"
+        required
+        [(ngModel)]="onlineTrainingOptionSelect"
+        (ngModelChange)="updatePrice()"
+      >
+        <option value="onlineOne">1 blok - 6 tygodni</option>
+        <option value="onlineTwo">2 bloki - 12 tygodni</option>
+        <option value="onlineThree">3 bloki - 18 tygodni</option>
+      </select>
+      <div class="offers-item">
+        <label for="nameInput">Oświadczenie:</label>
+      </div>
+      <div class="checkboxes">
+        <input
+          type="checkbox"
+          name="healthy"
+          id="healthy"
+          [(ngModel)]="healthCheck"
+        />
+        <p [ngClass]="{ required: !healthCheck }">
+          Jestem osobą zdrową, bez urazów
+        </p>
+      </div>
+    </div>
+
+    <!-- Dane zamawiającego -->
+
+    <p class="form-header">Dane zamawiającego</p>
+    <div class="offers-item">
+      <label for="nameInput" [ngClass]="{ required: !name }"
+        >Imię i nazwisko:</label
+      >
+
+      <input
+        type="text"
+        id="nameInput"
+        name="name"
+        [(ngModel)]="name"
+        required
+      />
     </div>
     <div class="offers-item">
-      <label for="nameInput">Imię i nazwisko:</label>
-      <input type="text" id="nameInput" name="name" [(ngModel)]="name" required>
+      <label for="emailInput" [ngClass]="{ required: !email }">Email:</label>
+      <input
+        type="email"
+        id="emailInput"
+        name="email"
+        [(ngModel)]="email"
+        required
+      />
     </div>
     <div class="offers-item">
-      <label for="emailInput">Email:</label>
-      <input type="email" id="emailInput" name="email" [(ngModel)]="email" required>
-    </div>
-    <div class="offers-item">
-      <label for="phoneInput">Telefon:</label>
-      <input type="tel" id="phoneInput" name="phone" [(ngModel)]="phone" required>
+      <label for="phoneInput" [ngClass]="{ required: !phone }">Telefon:</label>
+      <input
+        type="tel"
+        id="phoneInput"
+        name="phone"
+        [(ngModel)]="phone"
+        required
+      />
     </div>
     <div class="offers-item">
       <label for="additionalInfoTextarea">Dodatkowe informacje:</label>
-      <textarea id="additionalInfoTextarea" name="additionalInfo" [(ngModel)]="additionalInfo"></textarea>
+      <textarea
+        id="additionalInfoTextarea"
+        name="additionalInfo"
+        [(ngModel)]="additionalInfo"
+      ></textarea>
     </div>
-    <button type="submit">Złóż zamówienie</button>
+
+    <div class="price-container">
+      <p *ngIf="selectedOption === 'training'" id="trainingPrice" class="price">
+        {{ trainingPrice }} zł
+      </p>
+      <p *ngIf="selectedOption === 'trainingPlan'" id="planPrice" class="price">
+        {{ planPrice }} zł
+      </p>
+      <p
+        *ngIf="selectedOption === 'onlineTraining'"
+        id="onlinePrice"
+        class="price"
+      >
+        {{ onlinePrice }} zł
+      </p>
+      <p *ngIf="selectedOption === 'voucher'" id="voucher" class="price">
+        150 zł
+      </p>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="!healthCheck || (!isEarly && !isLate)"
+      [ngClass]="{ 'disabled-button': !healthCheck || (!isEarly && !isLate) }"
+    >
+      Złóż zamówienie
+    </button>
+    <p
+      *ngIf="!healthCheck"
+      class="error"
+      data-aos="zoom-in"
+      data-aos-duration="200"
+      data-aos-once="true"
+    >
+      Potwierdź, że jesteś osobą zdrową, bez urazów!
+    </p>
+    <div *ngIf="!validForm" class="error">
+      <p data-aos="zoom-in" data-aos-duration="200" data-aos-once="true">
+        Wypełnij obowiązkowe pola!
+      </p>
+    </div>
   </form>
+  <app-faq
+    [type]="selectedOption"
+    (ngModelChange)="updatePrice(); updateBooleans()"
+  ></app-faq>
 </section>

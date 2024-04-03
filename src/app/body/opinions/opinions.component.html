@@ -1,0 +1,22 @@
+<section id="opinions">
+  <p class="header-text">OPINIE</p>
+  <ngx-slick-carousel class="opinions-container" [config]="slickConfig">
+    <div ngxSlickItem class="opinion" *ngFor="let opinion of opinions">
+      <div class="opinion-header">
+        <div class="image">
+          <img [src]="opinion.image" alt="Zdjęcie {{ opinion.author }}" />
+        </div>
+        <div class="author">
+          <p>{{ opinion.author }}</p>
+        </div>
+        <div class="date">
+          <p>{{ opinion.date }}</p>
+        </div>
+      </div>
+      <hr />
+      <div class="content">
+        <p>{{ opinion.content }}</p>
+      </div>
+    </div>
+  </ngx-slick-carousel>
+</section>

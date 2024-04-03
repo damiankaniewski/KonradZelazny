@@ -1,51 +1,42 @@
 #offer-thanks {
-    margin-top: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #offer-thanks img {
-    width: 70%;
+  width: 70%;
 }
 
 .thanks {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 80%;
-}
-
-.info {
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 20px;
-    text-align: center;
-    width: 80%;
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 80%;
 }
 
 #backButton {
-    appearance: none;
-    background-color: transparent;
-    border: 2px solid #6F0000;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; 
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #6F0000;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    text-align: center;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0;
-    min-height: 60px;
-    min-width: 0;
-    outline: none;
-    padding: 16px 24px;
-    text-align: center;
-    text-decoration: none;
-    width: 250px;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #6f0000;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #6f0000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  width: 250px;
 }

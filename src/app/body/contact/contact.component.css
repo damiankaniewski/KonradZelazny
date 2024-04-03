@@ -6,6 +6,12 @@
     padding-bottom: 20px;
 }
 
+.main-photo {
+    width: 200px;
+    z-index: -1;
+    filter: brightness(1.35);
+}
+
 .header-text {
     text-align: center;
     margin: 15px;

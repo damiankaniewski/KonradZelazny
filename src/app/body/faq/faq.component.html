@@ -1,0 +1,28 @@
+<section id="faq">
+  <div class="faq-container">
+    <h2 class="header-text">NAJCZĘSTSZE PYTANIA</h2>
+    <ul>
+      <li *ngFor="let faq of faqList; let i = index">
+        <div class="question">
+          <button class="question-button" (click)="toggleAnswer(i)">
+            <h3>{{ faq.question }}</h3>
+            <img
+              class="arrow"
+              src="assets/icons/right-arrow.svg"
+              alt="arrow"
+              [style.transform]="
+                faq.expanded ? 'rotate(270deg)' : 'rotate(90deg)'
+              "
+              [style.filter]="faq.expanded ? 'grayscale(1)' : 'none'"
+            />
+          </button>
+        </div>
+        <p *ngIf="faq.expanded" class="answer">
+          {{ faq.answer }}
+        </p>
+
+        <hr />
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,54 +1,49 @@
 <section id="header">
-    <div class="header-container">
-        <img id="logo" src="assets/logo/konradzelaznylogo.png" alt="Logo">
-        <button class="menu-toggle" (click)="toggleMenu()" >
-            <img id="menu-icon" src="assets/icons/header-black.svg" alt="header button" [@buttonAnimation]="imageState">
-        </button>
-
-    </div>
-    <div id="separator"></div>
-    <div class="menu" [ngClass]="{ 'open': isMenuOpen }" [@menuAnimation]="menuState">
-        <div class="menu-links">
-            <div class="menu-item">
-                <div id="separator"></div>
-                <a class="menu-a" (click)="navigateToSection('homepage')">
-                    <p>STRONA GŁÓWNA</p>
-                    <img class="arrow" src="assets/icons/right-arrow.svg" alt="arrow">
-                </a>
-                <div id="separator"></div>
-            </div>
-            <div class="menu-item">
-                <a class="menu-a" (click)="navigateToSection('about')">
-                    <p>O MNIE</p>
-                    <img class="arrow" src="assets/icons/right-arrow.svg" alt="arrow">
-                </a>
-                <div id="separator"></div>
-            </div>
-            <div class="menu-item">
-                <a class="menu-a" (click)="navigateToSection('offer')">
-                    <p>OFERTA</p>
-                    <img class="arrow" src="assets/icons/right-arrow.svg" alt="arrow">
-                </a>
-                <div id="separator"></div>
-            </div>
-            <div class="menu-item">
-                <a class="menu-a" (click)="navigateToSection('contact')">
-                    <p>KONTAKT</p>
-                    <img class="arrow" src="assets/icons/right-arrow.svg" alt="arrow">
-                </a>
-                <div id="separator"></div>
-            </div>
+  <div class="header-container">
+    <img
+      id="logo"
+      src="assets/logo/konradzelaznylogo.png"
+      alt="Logo"
+      (click)="navigateToHome()"
+    />
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <img
+        id="menu-icon"
+        src="assets/icons/header-black.svg"
+        alt="header button"
+        [@buttonAnimation]="imageState"
+      />
+    </button>
+  </div>
+  <div id="separator"></div>
+  <div
+    class="menu"
+    [ngClass]="{ open: isMenuOpen }"
+    [@menuAnimation]="menuState"
+  >
+    <div class="menu-links">
+      <ng-container *ngFor="let item of menuItems">
+        <div class="menu-item">
+          <a class="menu-a" (click)="navigateToSection(item.section)">
+            <p>{{ item.name }}</p>
+            <img class="arrow" src="assets/icons/right-arrow.svg" alt="arrow" />
+          </a>
+          <div id="separator"></div>
         </div>
-        
-        <div class="social-links">
-            <a href="https://www.facebook.com/KonradZelazny.TrenerPersonalny/" target="_blank">
-                <img src="assets/icons/facebook-logo.svg" alt="facebook">
-            </a>
-            <a href="https://www.instagram.com/zelazny_trening/" target="_blank">
-                <img src="assets/icons/instagram-logo.svg" alt="instagram">
-            </a>
-        </div>
-        <p>© 2024 KONRAD ŻELAZNY</p>
-
+      </ng-container>
     </div>
+
+    <div class="social-links">
+      <a
+        href="https://www.facebook.com/KonradZelazny.TrenerPersonalny/"
+        target="_blank"
+      >
+        <img src="assets/icons/facebook-logo.svg" alt="facebook" />
+      </a>
+      <a href="https://www.instagram.com/zelazny_trening/" target="_blank">
+        <img src="assets/icons/instagram-logo.svg" alt="instagram" />
+      </a>
+    </div>
+    <p>© 2024 KONRAD ŻELAZNY</p>
+  </div>
 </section>

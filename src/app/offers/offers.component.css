@@ -1,144 +1,212 @@
 #offers {
-    margin-top: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-text {
-    text-align: center;
-    margin: 15px;
-    font-size: 48px;
-    font-weight: bold;
+  text-align: center;
+  margin: 15px;
+  font-size: 48px;
+  font-weight: bold;
 }
 
 .offer-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-    width: 90%;
-    height: 500px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+  width: 90%;
+  height: 100%;
 }
 
 .item-image {
-    filter: drop-shadow(rgba(0, 0, 0, 0.3) 0px 0px 12px);
-    margin-top: 15px;
-    border-radius: 15px;
-    width: 90%;
+  filter: drop-shadow(rgba(0, 0, 0, 0.3) 0px 0px 12px);
+  margin-top: 15px;
+  border-radius: 15px;
+  width: 90%;
 }
 
 .item-title {
-    width: 90%;
-    font-size: 28px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
+  width: 95%;
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .item-desc {
-    width: 90%;
-    font-size: 18px;
-    text-align: center;
+  width: 95%;
+  font-size: 18px;
+  text-align: left;
 }
 
 .price {
-    font-size: 48px;
-    text-align: center;
-    font-weight: bold;
+  font-size: 36px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.price-container {
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 15px;
+  width: 210px;
 }
 
 .offers-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-    width: 75%;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+  width: 75%;
+  height: 100%;
 }
 
-#serviceSelect {
-    width: 100%;
-    padding: 10px 0;
-    background: none;
-    border: none;
-    border-bottom: 1px solid #666;
-    font-size: 20px;
-    font-weight: 100;
-    text-align: left;
-    outline: none;
-    transition: border-color.5s;
+#serviceSelect,
+.training-info select {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: left;
+  outline: none;
+  transition: border-color.5s;
 }
 
-.offers-form input, textarea {
-    width: 100%;
-    padding: 10px 0;
-    background: none;
-    border: none;
-    border-bottom: 1px solid #666;
-    font-size: 20px;
-    font-weight: 100;
-    text-align: left;
-    outline: none;
-    transition: border-color .5s;
+.offers-form input,
+textarea {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: left;
+  outline: none;
+  transition: border-color 0.5s;
 }
 
-.offers-form input::placeholder, textarea::placeholder {
-    color: #c2c2c2;
+.offers-form input::placeholder,
+textarea::placeholder {
+  color: #c2c2c2;
 }
 
 .offers-form input:focus {
-    border-bottom-color: #6f0000;
-    font-weight: bold;
-  }
+  border-bottom-color: #6f0000;
+  font-weight: bold;
+}
+
+.form-header {
+  text-align: center;
+  margin: 10px;
+  font-size: 28px;
+  font-weight: bold;
+}
 
 .offers-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #additionalInfoTextarea {
-    height: 150px;
-    line-height: 150%;
-    outline: 0;
-    margin-bottom: 20px;
+  height: 150px;
+  line-height: 150%;
+  outline: 0;
+  margin-bottom: 20px;
 }
 
 .offers-form button {
-    appearance: none;
-    background-color: transparent;
-    border: 2px solid #6F0000;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; 
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #6F0000;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    text-align: center;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0;
-    min-height: 60px;
-    min-width: 0;
-    outline: none;
-    padding: 16px 24px;
-    text-align: center;
-    text-decoration: none;
-    width: 250px;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #6f0000;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #6f0000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  width: 250px;
+}
+
+.disabled-button {
+  opacity: 10%;
+}
+
+.training-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.error {
+  text-align: center;
+  color: #6f0000;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.required {
+  color: #6f0000 !important;
+  font-weight: bold !important;
+}
+
+/* Checkbox */
+
+.checkboxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.checkboxes p {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+}
+
+input[type="checkbox"] {
+  width: 40px !important;
+  height: 40px !important;
+  accent-color: #6f0000;
 }

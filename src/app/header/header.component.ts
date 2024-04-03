@@ -1,7 +1,12 @@
 import { Component, HostListener, Renderer2 } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-header',
@@ -9,38 +14,56 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
   animations: [
     trigger('menuAnimation', [
-      state('void', style({
-        opacity: 0
-      })),
-      state('visible', style({
-        opacity: 1
-      })),
+      state(
+        'void',
+        style({
+          opacity: 0,
+        })
+      ),
+      state(
+        'visible',
+        style({
+          opacity: 1,
+        })
+      ),
       transition('void => visible', animate('200ms ease-in')),
-      transition('visible => void', animate('200ms ease-out'))
+      transition('visible => void', animate('200ms ease-out')),
     ]),
     trigger('buttonAnimation', [
-      state('normal', style({
-        filter: 'none',
-        transform: 'scale(1)'
-      })),
-      state('rotate', style({
-        filter: 'opacity(50%)',
-        transform: 'scale(1.2)'
-      })),
+      state(
+        'normal',
+        style({
+          filter: 'none',
+          transform: 'scale(1)',
+        })
+      ),
+      state(
+        'rotate',
+        style({
+          filter: 'opacity(50%)',
+          transform: 'scale(1.2)',
+        })
+      ),
       transition('normal => rotate', animate('200ms ease-in')),
-      transition('rotate => normal', animate('200ms ease-out'))
-    ])
-  ]
+      transition('rotate => normal', animate('200ms ease-out')),
+    ]),
+  ],
 })
-
-
 export class HeaderComponent {
-
   constructor(private renderer: Renderer2, private router: Router) {}
-  
+
   isMenuOpen: boolean = false;
   menuState: 'void' | 'visible' = 'void';
   imageState: 'normal' | 'rotate' = 'normal';
+
+  menuItems = [
+    { name: 'STRONA GŁÓWNA', section: 'homepage' },
+    { name: 'O MNIE', section: 'about' },
+    { name: 'OFERTA', section: 'offer' },
+    { name: 'OPINIE', section: 'opinions' },
+    { name: 'NAJCZĘSTSZE PYTANIA', section: 'faq' },
+    { name: 'KONTAKT', section: 'contact' },
+  ];
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any): void {
@@ -70,18 +93,30 @@ export class HeaderComponent {
     const headerHeight = 70;
 
     if (targetElement) {
-        const targetPosition = targetElement.offsetTop - headerHeight;
+      const targetPosition = targetElement.offsetTop - headerHeight;
 
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      });
     }
-}
+  }
 
   public async navigateToSection(sectionId: string): Promise<void> {
     await this.router.navigate(['/main']);
-    this.scrollToElement(sectionId);
     this.toggleMenu();
+    setTimeout(() => {
+      this.scrollToElement(sectionId);
+    }, 200);
+  }
+
+  public async navigateToHome(): Promise<void> {
+    if (this.isMenuOpen === false) {
+      await this.router.navigate(['/main']);
+
+      setTimeout(() => {
+        this.scrollToElement('homepage');
+      }, 200);
+    }
   }
 }

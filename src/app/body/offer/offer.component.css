@@ -1,88 +1,87 @@
 #offer {
-    /* background-image: url(src/assets/backgrounds/konrad5.png); */
-    height: 2000px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .header-text {
-    text-align: center;
-    margin: 15px;
-    font-size: 48px;
-    font-weight: bold;
+  text-align: center;
+  margin: 15px;
+  font-size: 48px;
+  font-weight: bold;
 }
 
 .offer-container {
-    display: flex;
-    gap: 20px;
-    max-width: 600px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  gap: 20px;
+  max-width: 600px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .offer-item {
-    background-color: white;
-    z-index: 0;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 75%;
-    height: 100%;
+  background-color: white;
+  z-index: 0;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 100%;
 }
 
 .item-image {
-    filter: drop-shadow(rgba(0, 0, 0, 0.3) 0px 0px 12px);
-    margin-top: 15px;
-    border-radius: 15px;
-    width: 90%;
+  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 12px);
+  margin-top: 15px;
+  border-radius: 15px;
+  width: 90%;
 }
 
 .item-title {
-    width: 90%;
-    font-size: 28px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
+  width: 90%;
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .item-desc {
-    width: 90%;
-    font-size: 18px;
-    text-align: center;
+  width: 90%;
+  font-size: 18px;
+  text-align: center;
 }
 
 .price {
-    font-size: 32px;
-    text-align: center;
-    font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .item-button {
-    appearance: none;
-    background-color: transparent;
-    border: 2px solid #6F0000;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; 
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #6F0000;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    text-align: center;
-    font-weight: 600;
-    line-height: normal;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    min-height: 60px;
-    min-width: 0;
-    outline: none;
-    padding: 16px 24px;
-    text-align: center;
-    text-decoration: none;
-    width: 180px;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #6f0000;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 5px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #6f0000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  width: 180px;
 }

@@ -1,109 +1,41 @@
 #about {
-    margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.primary {
-    text-align: center;
-    margin: 10px;
-    font-size: 48px;
-    font-weight: bold;
-}
-
-hr { 
-    margin-top:30px;
-    border: 2px solid #6F0000;
-}
-
-.secondary {
-    text-align: center;
-    padding: 20px;
-    margin: 0;
-    font-size: 48px;
-    font-weight: bold;
-    color: white;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.main-container img {
-    width: 200px;
-    height: auto;
-}
-
-.about-text {
-    margin-left: 15px;
-    font-size: 20px;
-}
-
-.about-text-right {
-    width: 60%;
-    text-align: right;
-    margin-right: 15px;
-    font-size: 20px;
-    color: white;
-}
-
-.second-container {
-    height: 90vw;
-}
-
-.second-container img {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
+.header-text {
+  text-align: center;
+  margin: 15px;
+  font-size: 48px;
+  font-weight: bold;
 }
 
 .text-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
 }
 
-.third-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.main-text {
+  font-size: 18px;
 }
 
-.benefits-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.image-container {
+  background-color: white;
+  z-index: 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 4px 4px 6px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.benefits-container img {
-    width: 180px;
-    height: auto;
-}
-
-.benefits-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-}
-
-.benefits-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-left: 15px;
-    font-size: 20px;
-}
-
-.benefits-item img {
-    width: 40px;
+.image-container > img {
+  width: 100%;
 }

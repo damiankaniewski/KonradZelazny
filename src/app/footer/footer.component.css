@@ -1,44 +1,51 @@
 #footer {
-    background-color: #6F0000;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 5px;
+  background-color: #6f0000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 95%;
 }
 
 .social-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 .social-links a {
   margin: 5px;
 }
 
 .social-links img {
-    width: 50px;
-}  
+  width: 50px;
+}
 .signature {
-    font-size: 14px;
-    text-align: right;
-    vertical-align: center;
-    padding-bottom: 3px;
+  font-size: 18px;
+  text-align: right;
+  vertical-align: center;
+  padding-bottom: 10px;
+}
+
+.information {
+  width: 92%;
+  padding-bottom: 20px;
 }
 
 .author {
-    font-size: 12px;
-    text-align: right;
-    vertical-align: center;
-    margin:0;
+  font-size: 10px;
+  text-align: right;
+  vertical-align: center;
+  margin: 0;
 }

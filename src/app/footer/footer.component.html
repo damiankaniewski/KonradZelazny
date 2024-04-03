@@ -1,16 +1,26 @@
 <section id="footer">
-    <div class="main">
-        <div class="social-links">
-            <a href="https://www.facebook.com/KonradZelazny.TrenerPersonalny/" target="_blank">
-                <img src="assets/icons/facebook-logo.svg" alt="facebook">
-            </a>
-            <a href="https://www.instagram.com/zelazny_trening/" target="_blank">
-                <img src="assets/icons/instagram-logo.svg" alt="instagram">
-            </a>
-        </div>
-        <p class="signature">© 2024 KONRAD ŻELAZNY</p>
-    
+  <div class="main">
+    <div class="social-links">
+      <a
+        href="https://www.facebook.com/KonradZelazny.TrenerPersonalny/"
+        target="_blank"
+      >
+        <img src="assets/icons/facebook-logo.svg" alt="facebook" />
+      </a>
+      <a href="https://www.instagram.com/zelazny_trening/" target="_blank">
+        <img src="assets/icons/instagram-logo.svg" alt="instagram" />
+      </a>
     </div>
+    <p class="signature">© 2024 KONRAD ŻELAZNY</p>
+  </div>
+  <div class="information">
+    <a class="information-button" (click)="redirectTo('/statute')">
+      <p>Regulamin</p>
+    </a>
+    <a class="information-button" (click)="redirectTo('/privacy-policy')">
+      <p>Polityka prywatności</p>
+    </a>
+  </div>
 
-    <p class="author">Twórca strony: Damian Kaniewski</p>
+  <p class="author">Twórca strony: Damian Kaniewski</p>
 </section>

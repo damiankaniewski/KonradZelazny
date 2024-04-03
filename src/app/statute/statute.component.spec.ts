@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OfferDtoComponent } from './offer-dto.component';
+import { StatuteComponent } from './statute.component';
 
-describe('OfferDtoComponent', () => {
-  let component: OfferDtoComponent;
-  let fixture: ComponentFixture<OfferDtoComponent>;
+describe('StatuteComponent', () => {
+  let component: StatuteComponent;
+  let fixture: ComponentFixture<StatuteComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OfferDtoComponent]
+      declarations: [StatuteComponent]
     });
-    fixture = TestBed.createComponent(OfferDtoComponent);
+    fixture = TestBed.createComponent(StatuteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
