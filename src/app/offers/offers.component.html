@@ -1,9 +1,6 @@
 <section id="offers">
   <p class="header-text">Formularz zamówienia</p>
-
   <form
-    action="https://formsubmit.co/daba9@op.pl"
-    method="POST"
     class="offers-form"
     #offerForm="ngForm"
     (ngSubmit)="submitOffer(offerForm)"
@@ -201,9 +198,28 @@
         data-aos-duration="200"
         data-aos-once="true"
       >
-        Pamiętaj, by podać w informacjach dodatkowych dla kogo jest to voucher
-        oraz z jakiej okazji!
+        Pamiętaj, by podać dla kogo jest to voucher oraz z jakiej okazji!
       </p>
+      <div class="offers-item" *ngIf="isVoucher">
+        <label>Imię i nazwisko odbiorcy:</label>
+        <input
+          type="text"
+          name="voucherName"
+          id="voucherName"
+          [(ngModel)]="voucherName"
+          required
+        />
+      </div>
+      <div class="offers-item" *ngIf="isVoucher">
+        <label>Z jakiej okazji?</label>
+        <input
+          type="text"
+          name="voucherWhy"
+          id="voucherWhy"
+          [(ngModel)]="voucherWhy"
+          required
+        />
+      </div>
     </div>
 
     <!-- Plan treningowy -->
@@ -265,52 +281,6 @@
         </p>
       </div>
     </div>
-
-    <!-- Dane zamawiającego -->
-
-    <p class="form-header">Dane zamawiającego</p>
-    <div class="offers-item">
-      <label for="nameInput" [ngClass]="{ required: !name }"
-        >Imię i nazwisko:</label
-      >
-
-      <input
-        type="text"
-        id="nameInput"
-        name="name"
-        [(ngModel)]="name"
-        required
-      />
-    </div>
-    <div class="offers-item">
-      <label for="emailInput" [ngClass]="{ required: !email }">Email:</label>
-      <input
-        type="email"
-        id="emailInput"
-        name="email"
-        [(ngModel)]="email"
-        required
-      />
-    </div>
-    <div class="offers-item">
-      <label for="phoneInput" [ngClass]="{ required: !phone }">Telefon:</label>
-      <input
-        type="tel"
-        id="phoneInput"
-        name="phone"
-        [(ngModel)]="phone"
-        required
-      />
-    </div>
-    <div class="offers-item">
-      <label for="additionalInfoTextarea">Dodatkowe informacje:</label>
-      <textarea
-        id="additionalInfoTextarea"
-        name="additionalInfo"
-        [(ngModel)]="additionalInfo"
-      ></textarea>
-    </div>
-
     <div class="price-container">
       <p *ngIf="selectedOption === 'training'" id="trainingPrice" class="price">
         {{ trainingPrice }} zł
@@ -325,15 +295,60 @@
       >
         {{ onlinePrice }} zł
       </p>
-      <p *ngIf="selectedOption === 'voucher'" id="voucher" class="price">
-        150 zł
-      </p>
     </div>
+    <!-- Dane zamawiającego -->
 
+    <p class="form-header">Dane zamawiającego</p>
+    <div class="offers-item">
+      <label for="nameInput" [ngClass]="{ required: !name }"
+        >Imię i nazwisko:</label
+      >
+
+      <input
+        type="text"
+        id="nameInput"
+        name="name"
+        [(ngModel)]="name"
+        (input)="validateForm(offerForm)"
+        required
+      />
+    </div>
+    <div class="offers-item">
+      <label for="emailInput" [ngClass]="{ required: !email }">Email:</label>
+      <input
+        type="email"
+        id="emailInput"
+        name="email"
+        [(ngModel)]="email"
+        (input)="validateForm(offerForm)"
+        required
+      />
+    </div>
+    <div class="offers-item">
+      <label for="phoneInput" [ngClass]="{ required: !phone }">Telefon:</label>
+      <input
+        type="tel"
+        id="phoneInput"
+        name="phone"
+        [(ngModel)]="phone"
+        (input)="validateForm(offerForm)"
+        required
+      />
+    </div>
+    <div class="offers-item">
+      <label for="additionalInfoTextarea">Dodatkowe informacje:</label>
+      <textarea
+        id="additionalInfoTextarea"
+        name="additionalInfo"
+        [(ngModel)]="additionalInfo"
+      ></textarea>
+    </div>
     <button
       type="submit"
       [disabled]="!healthCheck || (!isEarly && !isLate)"
-      [ngClass]="{ 'disabled-button': !healthCheck || (!isEarly && !isLate) }"
+      [ngClass]="{
+        'disabled-button': !healthCheck || (!isEarly && !isLate) || !validForm
+      }"
     >
       Złóż zamówienie
     </button>
@@ -352,6 +367,18 @@
       </p>
     </div>
   </form>
+  <!-- mail form -->
+  <form
+    ngNoForm
+    action="https://formsubmit.co/damian.kaniewski.contact@gmail.com"
+    method="POST"
+  >
+    <input type="text" name="name" required />
+    <input type="email" name="email" required />
+    <button type="submit">Send</button>
+  </form>
+
+  <!-- faq -->
   <app-faq
     [type]="selectedOption"
     (ngModelChange)="updatePrice(); updateBooleans()"

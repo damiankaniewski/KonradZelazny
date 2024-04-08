@@ -19,7 +19,7 @@ import { OpinionsComponent } from './body/opinions/opinions.component';
 import { FaqComponent } from './body/faq/faq.component';
 import { StatuteComponent } from './statute/statute.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ContactServiceComponent } from './services/contact-service/contact-service.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     FaqComponent,
     StatuteComponent,
     PrivacyPolicyComponent,
+    ContactServiceComponent,
   ],
   imports: [
     BrowserModule,

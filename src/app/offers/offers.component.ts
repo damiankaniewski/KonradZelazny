@@ -50,7 +50,8 @@ export class OffersComponent implements OnInit {
   onlinePrice: number = 150;
   onlineTrainingOptionSelect: string = 'onlineOne';
   // Voucher
-
+  voucherName: string = '';
+  voucherWhy: string = '';
   // Dane zamawiającego
   selectedOption: string = 'training';
   name: string = '';
@@ -70,10 +71,20 @@ export class OffersComponent implements OnInit {
       this.selectedOption = params.get('option') ?? 'training';
     });
     this.updatePrice();
+    this.updateBooleans();
+    this.validForm = false;
   }
 
   ngAfterViewInit() {
     window.scrollTo(0, 0);
+  }
+
+  validateForm(form: NgForm) {
+    if (form.valid) {
+      this.validForm = true;
+    } else {
+      this.validForm = false;
+    }
   }
 
   submitOffer(form: NgForm) {
@@ -127,7 +138,9 @@ export class OffersComponent implements OnInit {
             dodatkowe_informacje: this.additionalInfo,
             cena: this.priceService.price,
             opcja: option,
-            czy_voucher: this.isVoucher ? 'Tak' : 'Nie',
+            voucher: this.isVoucher ? 'Tak' : 'Nie',
+            voucher_dla_kogo: this.voucherName,
+            voucher_okazja: this.voucherWhy,
             czy_godziny_poranne: this.isEarly ? 'Tak' : 'Nie',
             czy_godziny_popoludniowe: this.isLate ? 'Tak' : 'Nie',
           };
@@ -161,7 +174,7 @@ export class OffersComponent implements OnInit {
 
       this.offerService.addOfferToDatabase(this.offerData, this.selectedOption);
 
-      this.router.navigate(['/offer-thanks']);
+      //this.router.navigate(['/offer-thanks']);
     } else {
       this.validForm = false;
     }

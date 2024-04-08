@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { collection, getDocs, setDoc, doc } from 'firebase/firestore';
 import { FirebaseService } from 'src/app/config/firebase-service/firebase-service.component';
+
 @Component({
   selector: 'app-offer-service',
   templateUrl: './offer-service.component.html',
