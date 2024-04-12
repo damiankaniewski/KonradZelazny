@@ -10,12 +10,13 @@ import {
 } from '@angular/animations';
 import { NgForm } from '@angular/forms';
 import { PriceServiceComponent } from '../services/price-service/price-service.component';
+import { ContactServiceComponent } from '../services/contact-service/contact-service.component';
 
 @Component({
   selector: 'app-offers',
   templateUrl: './offers.component.html',
   styleUrls: ['./offers.component.css'],
-  providers: [OfferServiceComponent],
+  providers: [OfferServiceComponent, ContactServiceComponent],
   animations: [
     trigger('fadeAnimation', [
       state(
@@ -53,7 +54,7 @@ export class OffersComponent implements OnInit {
   voucherName: string = '';
   voucherWhy: string = '';
   // Dane zamawiającego
-  selectedOption: string = 'training';
+  selectedOption: string = 'trening';
   name: string = '';
   email: string = '';
   phone: string = '';
@@ -63,12 +64,13 @@ export class OffersComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private offerService: OfferServiceComponent,
-    private priceService: PriceServiceComponent
+    private priceService: PriceServiceComponent,
+    private contactService: ContactServiceComponent
   ) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
-      this.selectedOption = params.get('option') ?? 'training';
+      this.selectedOption = params.get('option') ?? 'trening';
     });
     this.updatePrice();
     this.updateBooleans();
@@ -94,7 +96,7 @@ export class OffersComponent implements OnInit {
 
       let option: string;
       switch (this.selectedOption) {
-        case 'training':
+        case 'trening':
           option =
             this.trainingOptionSelect === 'trainingFour'
               ? '4 treningi w miesiacu'
@@ -104,7 +106,7 @@ export class OffersComponent implements OnInit {
               ? '12 treningow w miesiacu'
               : 'N/A';
           break;
-        case 'trainingPlan':
+        case 'plan_treningowy':
           option =
             this.trainingPlanOptionSelect === 'planOne'
               ? '1 blok - 6 tygodni'
@@ -114,7 +116,7 @@ export class OffersComponent implements OnInit {
               ? '3 bloki - 18 tygodni'
               : 'N/A';
           break;
-        case 'onlineTraining':
+        case 'prowadzenie_online':
           option =
             this.onlineTrainingOptionSelect === 'onlineOne'
               ? '1 blok - 6 tygodni'
@@ -130,8 +132,9 @@ export class OffersComponent implements OnInit {
       }
 
       switch (this.selectedOption) {
-        case 'training':
+        case 'trening':
           this.offerData = {
+            rodzaj_oferty: this.selectedOption,
             imie: this.name,
             nazwisko: this.email,
             telefon: this.phone,
@@ -145,8 +148,9 @@ export class OffersComponent implements OnInit {
             czy_godziny_popoludniowe: this.isLate ? 'Tak' : 'Nie',
           };
           break;
-        case 'trainingPlan':
+        case 'plan_treningowy':
           this.offerData = {
+            rodzaj_oferty: this.selectedOption,
             imie: this.name,
             nazwisko: this.email,
             telefon: this.phone,
@@ -154,11 +158,11 @@ export class OffersComponent implements OnInit {
             cena: this.priceService.price,
             opcja: option,
             czy_zdrowy: this.healthCheck ? 'Tak' : 'Nie',
-            czy_voucher: this.isVoucher ? 'Tak' : 'Nie',
           };
           break;
-        case 'onlineTraining':
+        case 'prowadzenie_online':
           this.offerData = {
+            rodzaj_oferty: this.selectedOption,
             imie: this.name,
             nazwisko: this.email,
             telefon: this.phone,
@@ -166,15 +170,15 @@ export class OffersComponent implements OnInit {
             cena: this.priceService.price,
             opcja: option,
             czy_zdrowy: this.healthCheck ? 'Tak' : 'Nie',
-            czy_voucher: this.isVoucher ? 'Tak' : 'Nie',
           };
           break;
         default:
       }
 
       this.offerService.addOfferToDatabase(this.offerData, this.selectedOption);
+      this.contactService.sendEmail(this.offerData);
 
-      //this.router.navigate(['/offer-thanks']);
+      this.router.navigate(['/offer-thanks']);
     } else {
       this.validForm = false;
     }
@@ -182,7 +186,7 @@ export class OffersComponent implements OnInit {
 
   updatePrice() {
     switch (this.selectedOption) {
-      case 'training':
+      case 'trening':
         switch (this.trainingOptionSelect) {
           case 'trainingFour':
             this.trainingPrice = 520;
@@ -197,7 +201,7 @@ export class OffersComponent implements OnInit {
         this.healthCheck = true;
         this.setPrice(this.trainingPrice);
         break;
-      case 'trainingPlan':
+      case 'plan_treningowy':
         switch (this.trainingPlanOptionSelect) {
           case 'planOne':
             this.planPrice = 200;
@@ -212,7 +216,7 @@ export class OffersComponent implements OnInit {
         this.healthCheck = false;
         this.setPrice(this.planPrice);
         break;
-      case 'onlineTraining':
+      case 'prowadzenie_online':
         switch (this.onlineTrainingOptionSelect) {
           case 'onlineOne':
             this.onlinePrice = 300;
@@ -235,7 +239,7 @@ export class OffersComponent implements OnInit {
   }
 
   updateBooleans() {
-    if (this.selectedOption === 'training') {
+    if (this.selectedOption === 'trening') {
       this.isEarly = false;
       this.isLate = false;
     } else {

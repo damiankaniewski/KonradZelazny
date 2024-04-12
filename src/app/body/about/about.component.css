@@ -21,14 +21,17 @@
 }
 
 .main-text {
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .image-container {
+  margin-bottom: 20px;
   background-color: white;
+  box-shadow: #6f0000 16px 16px 0px;
+  transform: translate(-8px, 0);
   z-index: 0;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.3) 4px 4px 6px;
   display: flex;
   overflow: hidden;
   flex-direction: column;

@@ -7,21 +7,43 @@
     class="main-photo"
   />
 
-  <form class="contact-form">
-    <input type="text" name="name" required placeholder="Imię i nazwisko" />
-    <input type="email" name="email" required placeholder="Adres e-mail" />
+  <form
+    class="contact-form"
+    (ngSubmit)="submitForm(contactForm)"
+    #contactForm="ngForm"
+  >
+    <input
+      type="text"
+      name="name"
+      ngModel
+      required
+      placeholder="Imię i nazwisko"
+      [(ngModel)]="name"
+    />
+    <input
+      type="email"
+      name="email"
+      ngModel
+      required
+      placeholder="Adres e-mail"
+      [(ngModel)]="email"
+    />
     <input
       type="number"
       name="number"
+      ngModel
       placeholder="Numer telefonu (opcjonalnie)"
+      [(ngModel)]="number"
     />
     <textarea
       id="message"
+      ngModel
       required
       name="message"
       placeholder="W czym mogę Ci pomóc?"
+      [(ngModel)]="message"
     ></textarea>
-    <button type="submit">Wyślij</button>
+    <button type="submit" [disabled]="!contactForm.valid">Wyślij</button>
   </form>
 
   <div class="information">

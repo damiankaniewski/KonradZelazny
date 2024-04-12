@@ -1,4 +1,5 @@
 #footer {
+  position: relative;
   background-color: #6f0000;
   color: white;
   display: flex;
@@ -7,14 +8,22 @@
   align-items: center;
   padding-bottom: 5px;
   padding-top: 5px;
+  overflow: hidden;
 }
-
+.hex-image {
+  position: absolute;
+  top: 0;
+  filter: opacity(75%);
+  width: 100%;
+  z-index: 0;
+}
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 95%;
+  z-index: 1;
 }
 
 .social-links {
@@ -41,6 +50,7 @@
 .information {
   width: 92%;
   padding-bottom: 20px;
+  z-index: 1;
 }
 
 .author {
@@ -48,4 +58,5 @@
   text-align: right;
   vertical-align: center;
   margin: 0;
+  z-index: 1;
 }

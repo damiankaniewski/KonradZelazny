@@ -1,31 +1,50 @@
 <section id="homepage">
+  <img
+    class="background-image"
+    src="assets/hexpatternlong.png"
+    alt="hexpattern"
+    data-aos="fade-in"
+    data-aos-duration="2000"
+    data-aos-once="true"
+  />
   <div
     class="main-image"
-    data-aos="zoom-in"
+    data-aos="fade-in"
     data-aos-duration="2000"
+    data-aos-delay="500"
     data-aos-once="true"
   >
     <img src="assets/logo/konradzelaznylogowtle.png" alt="Konrad Żelazny" />
   </div>
-  <p
-    class="text-container"
-    data-aos="zoom-out"
-    data-aos-duration="1000"
-    data-aos-delay="500"
-    data-aos-once="true"
-  >
-    PROFESJONALNY TRENING POD OKIEM <b>DOŚWIADCZONEGO TRENERA</b>
-  </p>
-  <div class="buttons">
-    <button
-      class="contact-button"
-      (click)="navigateToSection('contact')"
-      data-aos="zoom-in"
+  <div class="content">
+    <p
+      class="text-container"
+      data-aos="fade-in"
       data-aos-duration="1000"
-      data-aos-delay="1000"
+      data-aos-delay="500"
       data-aos-once="true"
     >
-      <p class="button-text">Skontaktuj się</p>
-    </button>
+      PROFESJONALNY TRENING POD OKIEM <b>DOŚWIADCZONEGO TRENERA</b>
+    </p>
+    <img
+      class="hex-image"
+      src="assets/hexpatternred.png"
+      alt="hexpattern"
+      data-aos="fade-in"
+      data-aos-duration="2000"
+      data-aos-once="true"
+    />
+    <div class="buttons">
+      <button
+        class="contact-button"
+        (click)="navigateToSection('contact')"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        data-aos-delay="1000"
+        data-aos-once="true"
+      >
+        <p class="button-text">Skontaktuj się</p>
+      </button>
+    </div>
   </div>
 </section>
