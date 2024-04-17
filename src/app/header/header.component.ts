@@ -61,7 +61,6 @@ export class HeaderComponent {
     { name: 'O MNIE', section: 'about' },
     { name: 'OFERTA', section: 'offer' },
     { name: 'OPINIE', section: 'opinions' },
-    { name: 'NAJCZĘSTSZE PYTANIA', section: 'faq' },
     { name: 'KONTAKT', section: 'contact' },
   ];
 

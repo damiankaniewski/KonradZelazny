@@ -73,6 +73,9 @@ Apache-2.0
 @firebase/webchannel-wrapper
 Apache-2.0
 
+@yoozly/ngx-parallax
+MIT
+
 aos
 MIT
 The MIT License (MIT)

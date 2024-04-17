@@ -1,0 +1,13 @@
+body {
+  overflow: hidden;
+}
+
+.background-image {
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+  filter: opacity(50%);
+  overflow: hidden;
+  width: 100%;
+  z-index: -1;
+}

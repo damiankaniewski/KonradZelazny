@@ -28,7 +28,7 @@ export class FaqComponent implements OnInit {
     type: string
   ): { question: string; answer: string; expanded: boolean }[] {
     switch (type) {
-      case 'training':
+      case 'trening':
         return [
           {
             question:
@@ -63,7 +63,7 @@ export class FaqComponent implements OnInit {
             expanded: false,
           },
         ];
-      case 'trainingPlan':
+      case 'plan_treningowy':
         return [
           {
             question: 'Od kiedy możemy zacząć współpracę?',
@@ -96,7 +96,7 @@ export class FaqComponent implements OnInit {
             expanded: false,
           },
         ];
-      case 'onlineTraining':
+      case 'prowadzenie_online':
         return [
           {
             question: 'Od kiedy możemy zacząć współpracę?',
@@ -119,7 +119,7 @@ export class FaqComponent implements OnInit {
           {
             question: 'Czy układasz i rozpisujesz dietę?',
             answer:
-              'Nie rozpisuje i nie układam diet. Na treningu osobą zdrowym (bez chorób dietetycznych) oferuje pełne wsparcie z zakresu zdrowych nawyków żywieniowych zupełnie za darmo.',
+              'Nie rozpisuje i nie układam diet. Na treningu osobom zdrowym (bez chorób dietetycznych) oferuje pełne wsparcie z zakresu zdrowych nawyków żywieniowych zupełnie za darmo.',
             expanded: false,
           },
           {

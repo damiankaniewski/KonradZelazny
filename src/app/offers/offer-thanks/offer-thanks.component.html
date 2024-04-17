@@ -1,27 +1,33 @@
 <section id="offer-thanks">
+  <img
+    class="background-image"
+    src="assets/hexpatternlong.png"
+    alt="hexpattern"
+    ngx-parallax
+    [speed]="-20"
+  />
   <div class="thanks" data-aos="zoom-in">
     <p>
-      <b>Dziękuję za złożenie zamówienia!</b><br /><br />
+      <b>Dziękuję za złożenie zamówienia!</b>
+    </p>
+    <p>Proszę dokonać wpłaty na numer konta:</p>
+    <p class="highlighted-container"><b>72 1050 1445 1000 0097 4813 8006</b></p>
 
-      Proszę dokonać wpłaty na numer konta: <br /><br /><b
-        style="font-size: 32px"
-        >72 1050 1445 1000 0097 4813 8006</b
-      ><br /><br />
-      w wysokości <br /><br /><b style="font-size: 32px">{{ price }} zł</b
-      ><br /><br />
-      pod tytułem <br /><br /><b style="font-size: 32px"
-        >Imię, Nazwisko, rodzaj oferty (np. Trening)</b
-      ><br /><br />
-      Po zaksięgowaniu pieniędzy na koncie, proszę oczekiwać na
-      <b>maila z linkiem</b>, do ankiety. Wypełnienie ankiety jest
-      <b>niezbędne</b> do podjęcia współpracy.
+    <p>w wysokości</p>
+    <p class="price-container">
+      <b>{{ price }} zł</b>
+    </p>
+
+    <p>pod tytułem</p>
+    <p class="highlighted-container">
+      <b>Imię, Nazwisko, rodzaj oferty (np. Trening)</b>
+    </p>
+
+    <p>
+      Po zaksięgowaniu pieniędzy na koncie, proszę oczekiwać na maila z linkiem,
+      do ankiety. Wypełnienie ankiety jest niezbędne do podjęcia współpracy.
     </p>
   </div>
+
   <button id="backButton" (click)="goBack()">Powrót do strony głównej</button>
-  <img
-    src="assets/logo/konradzelaznylogowtle.png"
-    alt="Konrad Żelazny"
-    data-aos="zoom-in-up"
-    data-aos-duration="1000"
-  />
 </section>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { ContactServiceComponent } from 'src/app/services/contact-service/contact-service.component';
 
 @Component({
@@ -10,6 +9,7 @@ import { ContactServiceComponent } from 'src/app/services/contact-service/contac
 })
 export class ContactComponent {
   constructor(private contactService: ContactServiceComponent) {}
+  isModalVisible: boolean = false;
   name?: string;
   email?: string;
   number?: number;
@@ -27,7 +27,15 @@ export class ContactComponent {
         behavior: 'smooth',
       });
       this.contactService.sendContact(contactData);
-    } else {
+      this.toggleModal();
+
+      setTimeout(() => {
+        this.toggleModal();
+      }, 3000);
     }
+  }
+
+  toggleModal() {
+    this.isModalVisible = !this.isModalVisible;
   }
 }

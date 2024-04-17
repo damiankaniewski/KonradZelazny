@@ -133,3 +133,23 @@ textarea::placeholder {
 .mapouter iframe {
   border-radius: 15px;
 }
+
+#modal {
+  color: black;
+  font-weight: bold;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  bottom: 0;
+  margin-bottom: 50px;
+  border: 3px solid #6f0000;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 22px;
+  padding: 5px;
+  border-radius: 15px;
+  width: 320px;
+  height: 60px;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+}

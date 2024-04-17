@@ -1,27 +1,62 @@
 #offer-thanks {
   margin-top: 70px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#offer-thanks img {
-  width: 70%;
+.background-image {
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+  filter: opacity(50%);
+  overflow: hidden;
+  width: 100%;
+  z-index: -1;
+}
+
+.highlighted-container {
+  padding: 20px;
+  background-color: white;
+  margin: 25px;
+  font-size: 24px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 15px;
+  width: 80%;
+}
+
+.price-container {
+  padding: 20px;
+  background-color: white;
+  margin: 25px;
+  font-size: 32px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 15px;
+  width: 50%;
 }
 
 .thanks {
-  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
   width: 80%;
 }
 
+.thanks p {
+  margin: 5px;
+}
+
 #backButton {
   appearance: none;
-  background-color: transparent;
-  border: 2px solid #6f0000;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: white;
+  border: 3px solid #6f0000;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
   border-radius: 15px;
   box-sizing: border-box;
   color: #6f0000;

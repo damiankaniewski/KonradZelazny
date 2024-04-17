@@ -5,13 +5,10 @@ import { HeaderComponent } from 'src/app/header/header.component';
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
-  providers: [HeaderComponent]
+  providers: [HeaderComponent],
 })
 export class HomepageComponent {
-  constructor(private headerComponent: HeaderComponent) { 
-
-
-  }
+  constructor(private headerComponent: HeaderComponent) {}
 
   navigateToSection(sectionName: string) {
     this.headerComponent.navigateToSection(sectionName);
